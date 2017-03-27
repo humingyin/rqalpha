@@ -20,9 +20,10 @@ import os
 import shutil
 import ruamel.yaml as yaml
 from importlib import import_module
+from rqalpha.utils.click_helper import Date
 
-from .utils.click_helper import Date
-from .utils.config import parse_config, get_default_config_path, load_config, dump_config
+from rqalpha.utils.config import parse_config, get_default_config_path, load_config, dump_config
+
 
 
 @click.group()
@@ -95,7 +96,7 @@ def run(**kwargs):
     if config_path is not None:
         config_path = os.path.abspath(config_path)
 
-    from . import main
+    from rqalpha import main
     main.run(parse_config(kwargs, config_path))
 
 
@@ -332,3 +333,4 @@ def disable(mod_name):
 
 if __name__ == '__main__':
     entry_point()
+

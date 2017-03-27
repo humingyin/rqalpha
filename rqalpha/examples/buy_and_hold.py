@@ -24,7 +24,8 @@ def handle_bar(context, bar_dict):
     # 使用order_shares(id_or_ins, amount)方法进行落单
 
     # TODO: 开始编写你的算法吧！
-    if not context.fired:
+    #if not context.fired:
         # order_percent并且传入1代表买入该股票并且使其占有投资组合的100%
-        order_percent(context.s1, 1)
-        context.fired = True
+        order_percent(context.s1, 0.1)
+        #context.fired = True
+        #order_shares(context.s1, 100)
